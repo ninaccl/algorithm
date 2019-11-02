@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "数组的顺序存储", "数组和广义表\数组和广义表.vcxproj", "{D877CBCD-2003-4309-B095-6ED672BA982F}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "稀疏矩阵的十字链表表示", "稀疏矩阵的十字链表表示\稀疏矩阵的十字链表表示.vcxproj", "{44D45F2C-6A27-4A3B-AA83-5CB6CE44C6C9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D877CBCD-2003-4309-B095-6ED672BA982F}.Debug|x64.ActiveCfg = Debug|x64
+		{D877CBCD-2003-4309-B095-6ED672BA982F}.Debug|x64.Build.0 = Debug|x64
+		{D877CBCD-2003-4309-B095-6ED672BA982F}.Debug|x86.ActiveCfg = Debug|Win32
+		{D877CBCD-2003-4309-B095-6ED672BA982F}.Debug|x86.Build.0 = Debug|Win32
+		{D877CBCD-2003-4309-B095-6ED672BA982F}.Release|x64.ActiveCfg = Release|x64
+		{D877CBCD-2003-4309-B095-6ED672BA982F}.Release|x64.Build.0 = Release|x64
+		{D877CBCD-2003-4309-B095-6ED672BA982F}.Release|x86.ActiveCfg = Release|Win32
+		{D877CBCD-2003-4309-B095-6ED672BA982F}.Release|x86.Build.0 = Release|Win32
+		{44D45F2C-6A27-4A3B-AA83-5CB6CE44C6C9}.Debug|x64.ActiveCfg = Debug|x64
+		{44D45F2C-6A27-4A3B-AA83-5CB6CE44C6C9}.Debug|x64.Build.0 = Debug|x64
+		{44D45F2C-6A27-4A3B-AA83-5CB6CE44C6C9}.Debug|x86.ActiveCfg = Debug|Win32
+		{44D45F2C-6A27-4A3B-AA83-5CB6CE44C6C9}.Debug|x86.Build.0 = Debug|Win32
+		{44D45F2C-6A27-4A3B-AA83-5CB6CE44C6C9}.Release|x64.ActiveCfg = Release|x64
+		{44D45F2C-6A27-4A3B-AA83-5CB6CE44C6C9}.Release|x64.Build.0 = Release|x64
+		{44D45F2C-6A27-4A3B-AA83-5CB6CE44C6C9}.Release|x86.ActiveCfg = Release|Win32
+		{44D45F2C-6A27-4A3B-AA83-5CB6CE44C6C9}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
