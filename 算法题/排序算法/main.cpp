@@ -1,4 +1,5 @@
-#include<iostream>
+ï»¿#include<iostream>
+#include<ctime>
 
 using namespace std;
 
@@ -94,12 +95,27 @@ void xuanze(int a[], int len)
 	}		
 }
 
+int* generateRondomArray(int size, int rangeL, int rangeR)
+{
+	if (rangeL <= rangeR)
+	{
+		cout << "false range" << endl;
+		return nullptr;
+	}
+	int *arr = new int[(int)(size+1)*rand()/double(RAND_MAX)];
+	srand(time(NULL));//åˆ©ç”¨ç³»ç»Ÿæ—¶é—´ï¼Œè®¾ç½®éšæœºç§å­
+	for (int i = 0; i < size; i++)
+		arr[i] = rand() % (rangeR - rangeL + 1) + rangeL;
+	return arr;
+}
+
 void main()
 {
+	generateRondomArray(5,1,10);
 	int a[] = { 50, 10, 90, 30, 70, 40, 80, 60, 20 };
 	int len = sizeof(a) / sizeof(int);
 	//maopao(a,len);
-	//kuaipai(a, 0, len - 1);//´«ÈëµÄÊÇÊ×Î²Ë÷Òý
+	//kuaipai(a, 0, len - 1);//ä¼ å…¥çš„æ˜¯é¦–å°¾ç´¢å¼•
 	//charu(a, len);
 	//xuanze(a, len);
 	print(a, len);
