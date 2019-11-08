@@ -3,6 +3,18 @@
 
 using namespace std;
 
+void print(int a[], int len);//打印
+void maopao(int a[], int len);//冒泡排序						  
+void kuaipai(int a[], int begin, int end);//快速排序
+void charu(int a[], int len);//插入排序
+void xuanze(int a[], int len);//选择排序
+void guibin(int arr[], int len);//归并排序
+void guibinProcess(int arr[], int L, int R);//归并具体过程
+void merge(int arr[], int L, int mid, int R);//归并后的连接
+int* generateRondomArray(int size, int rangeL, int rangeR);//生成随机数列
+
+
+
 void print(int a[],int len)
 {
 	for (int i = 0;i < len;i++)
@@ -10,6 +22,7 @@ void print(int a[],int len)
 	cout << endl;
 }
 
+//冒泡排序
 void maopao(int a[],int len)
 {
 	int temp;
@@ -27,6 +40,7 @@ void maopao(int a[],int len)
 	}
 }
 
+//快速排序
 void kuaipai(int a[], int begin, int end)
 {
 	if (begin >= end)
@@ -54,6 +68,7 @@ void kuaipai(int a[], int begin, int end)
 	kuaipai(a,left+1,end);
 }
 
+//插入排序
 void charu(int a[], int len)
 {
 	int temp,current;
@@ -75,6 +90,7 @@ void charu(int a[], int len)
 	}
 }
 
+//选择排序
 void xuanze(int a[], int len)
 {
 	int min,temp;
@@ -95,9 +111,51 @@ void xuanze(int a[], int len)
 	}		
 }
 
+//归并排序
+void guibin(int arr[], int len)
+{
+	if (arr == NULL || len < 2)
+		return;
+	guibinProcess(arr, 0, len - 1);
+}
+
+void guibinProcess(int arr[], int L, int R)
+{
+	if (L == R)
+		return;
+	int mid = L + ((R - L) >> 1); //L和R的中点位置
+	guibinProcess(arr, L, mid);
+	guibinProcess(arr, mid + 1, R);
+	merge(arr, L, mid, R);
+}
+
+void merge(int arr[], int L, int mid, int R)
+{
+	int* res = new int[R - L + 1];
+	int i = 0;
+	int p1 = L, p2 = mid + 1;
+	while (p1 <= mid && p2 <= R)
+	{
+		res[i++] = arr[p1] < arr[p2] ? arr[p1++] : arr[p2++];
+	}
+	while (p1 <= mid)
+	{
+		res[i++] = arr[p1++];
+	}
+	while (p2 <= R)
+	{
+		res[i++] = arr[p2++];
+	}
+	for (i = 0; i < R - L + 1; i++)
+	{
+		arr[L + i] = res[i];
+	}
+}
+
+//生成随机数列
 int* generateRondomArray(int size, int rangeL, int rangeR)
 {
-	if (rangeL <= rangeR)
+	if (rangeL > rangeR)
 	{
 		cout << "false range" << endl;
 		return nullptr;
@@ -114,6 +172,7 @@ void main()
 	generateRondomArray(5,1,10);
 	int a[] = { 50, 10, 90, 30, 70, 40, 80, 60, 20 };
 	int len = sizeof(a) / sizeof(int);
+	guibin(a, len);
 	//maopao(a,len);
 	//kuaipai(a, 0, len - 1);//传入的是首尾索引
 	//charu(a, len);
