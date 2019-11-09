@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 #include <iostream>
 #include<queue>
 #include<list>
@@ -12,24 +12,24 @@ typedef struct BinaryTreeNode
 
 using namespace std;
 
-BiTree createbyNum(vector<int> arr);//ÀûÓÃÊı×é¹¹Ôì¶ş²æÊ÷
+BiTree createbyNum(vector<int> arr);//åˆ©ç”¨æ•°ç»„æ„é€ äºŒå‰æ ‘
 void Create(BiTree &T);
-int GetNodeNum(BiTree T);//Çó¶ş²æÊ÷ÖĞµÄ½áµã¸öÊı
-int GetDepth(BiTree T);//Çó¶ş²æÊ÷µÄÉî¶È
-void preOrder(BiTree T);//Ç°Ğò±éÀú
-void inOrder(BiTree T);//ÖĞĞò±éÀú
-void postOrder(BiTree T);//ºóĞò±éÀú				 
-void levelOrder(BinaryTreeNode* T);//²ã±éÀú								   
-void converttolist(BiTree T, BinaryTreeNode* &pFirstNode, BinaryTreeNode* &pLastNode);//¶ş²æÊ÷±äÎªÓĞĞòµÄË«ÏòÁ´±í																			  
-int getNthNode(BiTree T, int k);//Çó¶ş²æÊ÷µÚk²ãµÄ½áµã¸öÊı							
-int maxSum(BiTree T);//Ëã³öÍ¾¾¶×î´óµÄÖ§Â·				 
-int leafNum(BiTree T);//ÇóÒ¶×Ó½áµã¸öÊı
-bool structSame(BiTree T1, BiTree T2);//ÅĞ¶Ï¶ş²æÊ÷ÊÇ·ñÏàÍ¬				  
-bool isAVL(BiTree T, int &height);//ÅĞ¶Ï¶ş²æÊ÷ÊÇ²»ÊÇÆ½ºâ¶ş²æÊ÷
-BiTree mirror(BiTree T);//Çó¶ş²æÊ÷µÄ¾µÏñ
-BinaryTreeNode* getCommonParent(BiTree T, BinaryTreeNode* node1, BinaryTreeNode* node2);//Çó¶ş²æÊ÷ÖĞÁ½¸ö½ÚµãµÄ×îµÍ¹«¹²×æÏÈ½Úµã_µİ¹é½â·¨
-BinaryTreeNode* getCommonParent2(BiTree T, int node1, int node2);//Çó¶ş²æÊ÷ÖĞÁ½¸ö½ÚµãµÄ×îµÍ¹«¹²×æÏÈ½Úµã_·Çµİ¹é½â·¨										 
-pair<int, int> getMaxDistance(BiTree T);//Çó¶ş²æÊ÷½ÚµãµÄ×î´ó¾àÀë				   
-BinaryTreeNode *rebulidTree(int *preOrder, int*  pInOrder, int nodenum);//ÓÉÇ°Ğò±éÀúºÍÖĞĞò±éÀúÖØ½¨¶ş²æÊ÷															
-bool isComplete(BiTree T);//ÅĞ¶Ï¶ş²æÊ÷ÊÇ·ñÊÇÍêÈ«¶ş²æÊ÷
-bool isPerfect(BiTree T);//ÅĞ¶ÏÊÇ·ñÎªÂú¶ş²æÊ÷
+int GetNodeNum(BiTree T);//æ±‚äºŒå‰æ ‘ä¸­çš„ç»“ç‚¹ä¸ªæ•°
+int GetDepth(BiTree T);//æ±‚äºŒå‰æ ‘çš„æ·±åº¦
+void preOrder(BiTree T);//å‰åºéå†
+void inOrder(BiTree T);//ä¸­åºéå†
+void postOrder(BiTree T);//ååºéå†				 
+void levelOrder(BinaryTreeNode* T);//å±‚éå†								   
+void converttolist(BiTree T, BinaryTreeNode* &pFirstNode, BinaryTreeNode* &pLastNode);//äºŒå‰æ ‘å˜ä¸ºæœ‰åºçš„åŒå‘é“¾è¡¨																			  
+int getNthNode(BiTree T, int k);//æ±‚äºŒå‰æ ‘ç¬¬kå±‚çš„ç»“ç‚¹ä¸ªæ•°							
+int maxSum(BiTree T);//ç®—å‡ºé€”å¾„æœ€å¤§çš„æ”¯è·¯				 
+int leafNum(BiTree T);//æ±‚å¶å­ç»“ç‚¹ä¸ªæ•°
+bool structSame(BiTree T1, BiTree T2);//åˆ¤æ–­äºŒå‰æ ‘æ˜¯å¦ç›¸åŒ				  
+bool isAVL(BiTree T, int &height);//åˆ¤æ–­äºŒå‰æ ‘æ˜¯ä¸æ˜¯å¹³è¡¡äºŒå‰æ ‘
+BiTree mirror(BiTree T);//æ±‚äºŒå‰æ ‘çš„é•œåƒ
+BinaryTreeNode* getCommonParent(BiTree T, BinaryTreeNode* node1, BinaryTreeNode* node2);//æ±‚äºŒå‰æ ‘ä¸­ä¸¤ä¸ªèŠ‚ç‚¹çš„æœ€ä½å…¬å…±ç¥–å…ˆèŠ‚ç‚¹_é€’å½’è§£æ³•
+BinaryTreeNode* getCommonParent2(BiTree T, int node1, int node2);//æ±‚äºŒå‰æ ‘ä¸­ä¸¤ä¸ªèŠ‚ç‚¹çš„æœ€ä½å…¬å…±ç¥–å…ˆèŠ‚ç‚¹_éé€’å½’è§£æ³•										 
+pair<int, int> getMaxDistance(BiTree T);//æ±‚äºŒå‰æ ‘èŠ‚ç‚¹çš„æœ€å¤§è·ç¦»				   
+BinaryTreeNode *rebulidTree(int *preOrder, int*  pInOrder, int nodenum);//ç”±å‰åºéå†å’Œä¸­åºéå†é‡å»ºäºŒå‰æ ‘															
+bool isComplete(BiTree T);//åˆ¤æ–­äºŒå‰æ ‘æ˜¯å¦æ˜¯å®Œå…¨äºŒå‰æ ‘
+bool isPerfect(BiTree T);//åˆ¤æ–­æ˜¯å¦ä¸ºæ»¡äºŒå‰æ ‘

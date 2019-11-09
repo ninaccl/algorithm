@@ -1,9 +1,9 @@
-#include<iostream>
+ï»¿#include<iostream>
 #include <stack>
 
 using namespace std;
 
-//É¾³ıÕ»¶¥ÔªËØ²¢·µ»Ø
+//åˆ é™¤æ ˆé¡¶å…ƒç´ å¹¶è¿”å›
 int getAndRemoveLastElement(stack<int>& s)
 {
 	int r = s.top();
@@ -16,7 +16,7 @@ int getAndRemoveLastElement(stack<int>& s)
 	 
 }
 
-//»ñÈ¡Õ»¶¥ÔªËØ²¢É¾³ı£¬Õ»Îª¿ÕµÄÊ±ºòÒÀ´Î²åÈë
+//è·å–æ ˆé¡¶å…ƒç´ å¹¶åˆ é™¤ï¼Œæ ˆä¸ºç©ºçš„æ—¶å€™ä¾æ¬¡æ’å…¥
 void reverseStack(stack<int>& s)
 {
 	if (s.empty())

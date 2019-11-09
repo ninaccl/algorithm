@@ -1,6 +1,6 @@
-#include"listFunction.h"
+ï»¿#include"listFunction.h"
 
-//Á´±í³õÊ¼»¯
+//é“¾è¡¨åˆå§‹åŒ–
 pair<Linklist, Linklist> CreateList(int n)
 {
 	LNode *L = (LNode*)malloc(sizeof(LNode));
@@ -19,7 +19,7 @@ pair<Linklist, Linklist> CreateList(int n)
 	return pair<Linklist, Linklist>(L, q);
 }
 
-//Á´±í¿ìÅÅ
+//é“¾è¡¨å¿«æ’
 void quickSort(Linklist head, Linklist end)
 {
 	if (head == NULL || head == end)
@@ -45,7 +45,7 @@ void quickSort(Linklist head, Linklist end)
 	quickSort(small->next, end);
 }
 
-//Á´±íÊä³ö
+//é“¾è¡¨è¾“å‡º
 void print(Linklist head)
 {
 	Linklist p = head;
@@ -57,7 +57,7 @@ void print(Linklist head)
 	}
 }
 
-//µ¥Á´±í½ÚµãÊıÄ¿
+//å•é“¾è¡¨èŠ‚ç‚¹æ•°ç›®
 int nodeNum(Linklist head)
 {
 	if (head == NULL)
@@ -72,7 +72,7 @@ int nodeNum(Linklist head)
 	return res;
 }
 
-//·´×ªÁ´±í
+//åè½¬é“¾è¡¨
 Linklist reverseList(Linklist head)
 {
 	if (head == NULL)
@@ -93,7 +93,7 @@ Linklist reverseList(Linklist head)
 	return reverseHead;
 }
 
-//²éÕÒµ¹ÊıµÚk¸ö½Úµã
+//æŸ¥æ‰¾å€’æ•°ç¬¬kä¸ªèŠ‚ç‚¹
 LNode* findRKthNode(Linklist head, unsigned int k)
 {
 	if (head == NULL || k == 0)
@@ -117,7 +117,7 @@ LNode* findRKthNode(Linklist head, unsigned int k)
 	return p2;
 }
 
-//²éÕÒÖĞ¼ä½Úµã
+//æŸ¥æ‰¾ä¸­é—´èŠ‚ç‚¹
 LNode* findMidNode(Linklist head)
 {
 	if (head == NULL || head->next == NULL)
@@ -136,7 +136,7 @@ LNode* findMidNode(Linklist head)
 	return low;
 }
 
-//·´Ïò´òÓ¡Á´±í-µİ¹é
+//åå‘æ‰“å°é“¾è¡¨-é€’å½’
 void printReverse(Linklist head)
 {
 	if (head == NULL)
@@ -146,7 +146,7 @@ void printReverse(Linklist head)
 	return;
 }
 
-//·´Ïò´òÓ¡Á´±í-¶ÑÕ»
+//åå‘æ‰“å°é“¾è¡¨-å †æ ˆ
 void printReverse2(Linklist head)
 {
 	if (head == NULL)
@@ -165,7 +165,7 @@ void printReverse2(Linklist head)
 	}
 }
 
-//ºÏ²¢Á½¸öÓĞĞòÁ´±í
+//åˆå¹¶ä¸¤ä¸ªæœ‰åºé“¾è¡¨
 Linklist mergeList(Linklist p1, Linklist p2)
 {
 	if (p1 == NULL)
@@ -199,7 +199,7 @@ Linklist mergeList(Linklist p1, Linklist p2)
 	return mergeHead;
 }
 
-//ÅĞ¶Ïµ¥Á´±íÊÇ·ñÓĞ»·
+//åˆ¤æ–­å•é“¾è¡¨æ˜¯å¦æœ‰ç¯
 bool hasCircle(Linklist p)
 {
 	Linklist low = p, fast = p;
@@ -213,7 +213,7 @@ bool hasCircle(Linklist p)
 	return false;
 }
 
-//ÅĞ¶ÏÁ½¸öµ¥Á´±íÊÇ·ñÏà½»(µ¥Á´±íÏà½»Î²±ØÏàÍ¬)
+//åˆ¤æ–­ä¸¤ä¸ªå•é“¾è¡¨æ˜¯å¦ç›¸äº¤(å•é“¾è¡¨ç›¸äº¤å°¾å¿…ç›¸åŒ)
 bool isInter(Linklist p1, Linklist p2)
 {
 	if (p1 == NULL || p2 == NULL)
@@ -226,7 +226,7 @@ bool isInter(Linklist p1, Linklist p2)
 	return c1 == c2;
 }
 
-//ÇóÁ½¸öµ¥Á´±íÏà½»µÄµÚÒ»¸ö½Úµã
+//æ±‚ä¸¤ä¸ªå•é“¾è¡¨ç›¸äº¤çš„ç¬¬ä¸€ä¸ªèŠ‚ç‚¹
 LNode* getFirstInter(Linklist p1, Linklist p2)
 {
 	if (p1 == NULL || p2 == NULL)
@@ -266,11 +266,11 @@ LNode* getFirstInter(Linklist p1, Linklist p2)
 	return traverse1;
 }
 
-//ÒÑÖªÒ»¸öµ¥Á´±íÖĞ´æÔÚ»·£¬Çó½øÈë»·ÖĞµÄµÚÒ»¸ö½Úµã
-//onenoteÉÏ¼ÇÂ¼ÁË¸ü¼Ó¼ò½àµÄ½â·¨£º¼´Á½Ö¸Õë½»µãµ½»·Èë¿ÚµÄ¾àÀëÎª´ÓÁ´±íÍ·µ½»·Èë¿ÚµÄ¾àÀë
+//å·²çŸ¥ä¸€ä¸ªå•é“¾è¡¨ä¸­å­˜åœ¨ç¯ï¼Œæ±‚è¿›å…¥ç¯ä¸­çš„ç¬¬ä¸€ä¸ªèŠ‚ç‚¹
+//onenoteä¸Šè®°å½•äº†æ›´åŠ ç®€æ´çš„è§£æ³•ï¼šå³ä¸¤æŒ‡é’ˆäº¤ç‚¹åˆ°ç¯å…¥å£çš„è·ç¦»ä¸ºä»é“¾è¡¨å¤´åˆ°ç¯å…¥å£çš„è·ç¦»
 LNode* findFirstNodeInCircle(Linklist p)
 {
-	//ÕÒ»·ÖĞµÄ½Úµã
+	//æ‰¾ç¯ä¸­çš„èŠ‚ç‚¹
 	if (p == NULL || p->next == NULL)
 		return false;
 	LNode* fast = p;
@@ -284,7 +284,7 @@ LNode* findFirstNodeInCircle(Linklist p)
 	}
 	if (fast == NULL || fast->next == NULL)
 		return NULL;
-	//½«»·¶Ï¿ªÇóÁ½¸öµ¥Á´±íµÄÏà½»½Úµã
+	//å°†ç¯æ–­å¼€æ±‚ä¸¤ä¸ªå•é“¾è¡¨çš„ç›¸äº¤èŠ‚ç‚¹
 	Linklist list1head, list2head;
 	LNode *assumedTail = slow;
 	list1head = p;

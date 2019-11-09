@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 #include<malloc.h>
 #include<iostream>
 #include<utility>
@@ -13,17 +13,17 @@ typedef struct LNode
 }LNode, *Linklist;
 
 
-pair<Linklist, Linklist> CreateList(int n);//Á´±í³õÊ¼»¯				   
-void quickSort(Linklist head, Linklist end);//Á´±í¿ìÅÅ
-void print(Linklist head);//Á´±íÊä³ö
-int nodeNum(Linklist head);//µ¥Á´±í½ÚµãÊıÄ¿
-Linklist reverseList(Linklist head);//·´×ªÁ´±í
-LNode* findRKthNode(Linklist head, unsigned int k);//²éÕÒµ¹ÊıµÚk¸ö½Úµã
-LNode* findMidNode(Linklist head);//²éÕÒÖĞ¼ä½Úµã
-void printReverse(Linklist head);//·´Ïò´òÓ¡Á´±í
-void printReverse2(Linklist head); //·´Ïò´òÓ¡Á´±í-¶ÑÕ»
-Linklist mergeList(Linklist p1, Linklist p2);//ºÏ²¢Á½¸öÓĞĞòÁ´±í//»¹¿ÉÒÔÓÃµİ¹éµÄ·½Ê½½â¾ö
-bool hasCircle(Linklist p);//ÅĞ¶Ïµ¥Á´±íÊÇ·ñÓĞ»·
-bool isInter(Linklist p1, Linklist p2);//ÅĞ¶ÏÁ½¸öµ¥Á´±íÊÇ·ñÏà½»
-Linklist getFirstInter(Linklist p1, Linklist p2);//ÇóÁ½¸öµ¥Á´±íÏà½»µÄµÚÒ»¸ö½Úµã
-LNode* findFirstNodeInCircle(Linklist head);//ÒÑÖªÒ»¸öµ¥Á´±íÖĞ´æÔÚ»·£¬Çó½øÈë»·ÖĞµÄµÚÒ»¸ö½Úµã
+pair<Linklist, Linklist> CreateList(int n);//é“¾è¡¨åˆå§‹åŒ–				   
+void quickSort(Linklist head, Linklist end);//é“¾è¡¨å¿«æ’
+void print(Linklist head);//é“¾è¡¨è¾“å‡º
+int nodeNum(Linklist head);//å•é“¾è¡¨èŠ‚ç‚¹æ•°ç›®
+Linklist reverseList(Linklist head);//åè½¬é“¾è¡¨
+LNode* findRKthNode(Linklist head, unsigned int k);//æŸ¥æ‰¾å€’æ•°ç¬¬kä¸ªèŠ‚ç‚¹
+LNode* findMidNode(Linklist head);//æŸ¥æ‰¾ä¸­é—´èŠ‚ç‚¹
+void printReverse(Linklist head);//åå‘æ‰“å°é“¾è¡¨
+void printReverse2(Linklist head); //åå‘æ‰“å°é“¾è¡¨-å †æ ˆ
+Linklist mergeList(Linklist p1, Linklist p2);//åˆå¹¶ä¸¤ä¸ªæœ‰åºé“¾è¡¨//è¿˜å¯ä»¥ç”¨é€’å½’çš„æ–¹å¼è§£å†³
+bool hasCircle(Linklist p);//åˆ¤æ–­å•é“¾è¡¨æ˜¯å¦æœ‰ç¯
+bool isInter(Linklist p1, Linklist p2);//åˆ¤æ–­ä¸¤ä¸ªå•é“¾è¡¨æ˜¯å¦ç›¸äº¤
+Linklist getFirstInter(Linklist p1, Linklist p2);//æ±‚ä¸¤ä¸ªå•é“¾è¡¨ç›¸äº¤çš„ç¬¬ä¸€ä¸ªèŠ‚ç‚¹
+LNode* findFirstNodeInCircle(Linklist head);//å·²çŸ¥ä¸€ä¸ªå•é“¾è¡¨ä¸­å­˜åœ¨ç¯ï¼Œæ±‚è¿›å…¥ç¯ä¸­çš„ç¬¬ä¸€ä¸ªèŠ‚ç‚¹

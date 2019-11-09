@@ -1,11 +1,11 @@
-#include "treeFunction.h"
+ï»¿#include "treeFunction.h"
 
 using namespace std;
 
-//ÀûÓÃÊı×é¹¹Ôì¶ş²æÊ÷
+//åˆ©ç”¨æ•°ç»„æ„é€ äºŒå‰æ ‘
 BiTree createbyNum(vector<int> arr)
 {
-	std::queue<BinaryTreeNode**> deck; //ÎªÁË´«ÒıÓÃ
+	std::queue<BinaryTreeNode**> deck; //ä¸ºäº†ä¼ å¼•ç”¨
 	BinaryTreeNode *root;
 	deck.push(&root);
 	for (int i = 0;i < arr.size();i++)
@@ -35,7 +35,7 @@ void Create(BiTree &T)
 	}
 }
 
-//Çó¶ş²æÊ÷ÖĞµÄ½áµã¸öÊı
+//æ±‚äºŒå‰æ ‘ä¸­çš„ç»“ç‚¹ä¸ªæ•°
 int GetNodeNum(BiTree T)
 {
 	if (T == NULL)
@@ -44,7 +44,7 @@ int GetNodeNum(BiTree T)
 		return GetNodeNum(T->left) + GetNodeNum(T->right) + 1;
 }
 
-//Çó¶ş²æÊ÷µÄÉî¶È
+//æ±‚äºŒå‰æ ‘çš„æ·±åº¦
 int GetDepth(BiTree T)
 {
 	if (T == NULL)
@@ -55,7 +55,7 @@ int GetDepth(BiTree T)
 	return depth;
 }
 
-//Ç°Ğò±éÀú
+//å‰åºéå†
 void preOrder(BiTree T)
 {
 	if (T == NULL)
@@ -65,7 +65,7 @@ void preOrder(BiTree T)
 	preOrder(T->right);
 }
 
-//ÖĞĞò±éÀú
+//ä¸­åºéå†
 void inOrder(BiTree T)
 {
 	if (T == NULL)
@@ -75,7 +75,7 @@ void inOrder(BiTree T)
 	inOrder(T->right);
 }
 
-//ºóĞò±éÀú
+//ååºéå†
 void postOrder(BiTree T)
 {
 	if (T == NULL)
@@ -85,7 +85,7 @@ void postOrder(BiTree T)
 	cout << T->data << endl;
 }
 
-//²ã±éÀú
+//å±‚éå†
 void levelOrder(BinaryTreeNode* T)
 {
 	if (T == NULL)
@@ -105,7 +105,7 @@ void levelOrder(BinaryTreeNode* T)
 	return;
 }
 
-//¶ş²æÊ÷±äÎªÓĞĞòµÄË«ÏòÁ´±í
+//äºŒå‰æ ‘å˜ä¸ºæœ‰åºçš„åŒå‘é“¾è¡¨
 void converttolist(BiTree T, BinaryTreeNode* &pFirstNode, BinaryTreeNode* &pLastNode)
 {
 	BinaryTreeNode* firstL = nullptr, *lastL = nullptr, *firstR = nullptr, *lastR = nullptr;
@@ -140,7 +140,7 @@ void converttolist(BiTree T, BinaryTreeNode* &pFirstNode, BinaryTreeNode* &pLast
 	return;
 }
 
-//Çó¶ş²æÊ÷µÚk²ãµÄ½áµã¸öÊı
+//æ±‚äºŒå‰æ ‘ç¬¬kå±‚çš„ç»“ç‚¹ä¸ªæ•°
 int getNthNode(BiTree T, int k)
 {
 	if (T == nullptr || k < 1)
@@ -152,7 +152,7 @@ int getNthNode(BiTree T, int k)
 	return numLeft + numRight;
 }
 
-//Ëã³öÍ¾¾¶×î´óµÄÖ§Â·
+//ç®—å‡ºé€”å¾„æœ€å¤§çš„æ”¯è·¯
 int maxSum(BiTree T)
 {
 	if (T == nullptr)
@@ -163,7 +163,7 @@ int maxSum(BiTree T)
 	return max;
 }
 
-//ÇóÒ¶×Ó½áµã¸öÊı
+//æ±‚å¶å­ç»“ç‚¹ä¸ªæ•°
 int leafNum(BiTree T)
 {
 	if (T == nullptr)
@@ -175,7 +175,7 @@ int leafNum(BiTree T)
 	return numL + numR;
 }
 
-//ÅĞ¶Ï¶ş²æÊ÷ÊÇ·ñÏàÍ¬
+//åˆ¤æ–­äºŒå‰æ ‘æ˜¯å¦ç›¸åŒ
 bool structSame(BiTree T1, BiTree T2)
 {
 	if (T1 == nullptr&&T2 == nullptr)
@@ -187,7 +187,7 @@ bool structSame(BiTree T1, BiTree T2)
 	return resL&&resR;
 }
 
-//ÅĞ¶Ï¶ş²æÊ÷ÊÇ²»ÊÇÆ½ºâ¶ş²æÊ÷
+//åˆ¤æ–­äºŒå‰æ ‘æ˜¯ä¸æ˜¯å¹³è¡¡äºŒå‰æ ‘
 bool isAVL(BiTree T, int &height)
 {
 	if (T == nullptr)
@@ -211,7 +211,7 @@ bool isAVL(BiTree T, int &height)
 	}
 }
 
-//Çó¶ş²æÊ÷µÄ¾µÏñ
+//æ±‚äºŒå‰æ ‘çš„é•œåƒ
 BiTree mirror(BiTree T)
 {
 	if (T == nullptr)
@@ -223,8 +223,8 @@ BiTree mirror(BiTree T)
 	return T;
 }
 
-//Çó¶ş²æÊ÷ÖĞÁ½¸ö½ÚµãµÄ×îµÍ¹«¹²×æÏÈ½Úµã
-//µİ¹é½â·¨£º
+//æ±‚äºŒå‰æ ‘ä¸­ä¸¤ä¸ªèŠ‚ç‚¹çš„æœ€ä½å…¬å…±ç¥–å…ˆèŠ‚ç‚¹
+//é€’å½’è§£æ³•ï¼š
 bool findNode(BinaryTreeNode * T, BinaryTreeNode * pNode) 
 { 
 	if (T == NULL || pNode == NULL)		
@@ -237,8 +237,8 @@ bool findNode(BinaryTreeNode * T, BinaryTreeNode * pNode)
 	return found; 
 }
 
-//£¨1£©Èç¹ûÁ½¸ö½Úµã·Ö±ğÔÚ¸ù½ÚµãµÄ×ó×ÓÊ÷ºÍÓÒ×ÓÊ÷£¬Ôò·µ»Ø¸ù½Úµã
-//£¨2£©Èç¹ûÁ½¸ö½Úµã¶¼ÔÚ×ó×ÓÊ÷£¬Ôòµİ¹é´¦Àí×ó×ÓÊ÷£»Èç¹ûÁ½¸ö½Úµã¶¼ÔÚÓÒ×ÓÊ÷£¬Ôòµİ¹é´¦ÀíÓÒ×ÓÊ÷
+//ï¼ˆ1ï¼‰å¦‚æœä¸¤ä¸ªèŠ‚ç‚¹åˆ†åˆ«åœ¨æ ¹èŠ‚ç‚¹çš„å·¦å­æ ‘å’Œå³å­æ ‘ï¼Œåˆ™è¿”å›æ ¹èŠ‚ç‚¹
+//ï¼ˆ2ï¼‰å¦‚æœä¸¤ä¸ªèŠ‚ç‚¹éƒ½åœ¨å·¦å­æ ‘ï¼Œåˆ™é€’å½’å¤„ç†å·¦å­æ ‘ï¼›å¦‚æœä¸¤ä¸ªèŠ‚ç‚¹éƒ½åœ¨å³å­æ ‘ï¼Œåˆ™é€’å½’å¤„ç†å³å­æ ‘
 BinaryTreeNode* getCommonParent(BiTree T, BinaryTreeNode* node1, BinaryTreeNode* node2)
 {
 	if (findNode(T->left, node1))
@@ -257,7 +257,7 @@ BinaryTreeNode* getCommonParent(BiTree T, BinaryTreeNode* node1, BinaryTreeNode*
 	}
 }
 
-//·Çµİ¹é½â·¨
+//éé€’å½’è§£æ³•
 bool getPath(BiTree T, int node, list<BinaryTreeNode*> &path)
 {
 	if (T == nullptr)
@@ -301,7 +301,7 @@ BinaryTreeNode* getCommonParent2(BiTree T, int node1, int node2)
 	return plast;
 }
 
-//Çó¶ş²æÊ÷½ÚµãµÄ×î´ó¾àÀë
+//æ±‚äºŒå‰æ ‘èŠ‚ç‚¹çš„æœ€å¤§è·ç¦»
 pair<int, int> getMaxDistance(BiTree T)
 {
 	if (T == NULL)
@@ -323,12 +323,12 @@ pair<int, int> getMaxDistance(BiTree T)
 	{
 		resR = { 0,0 };
 	}
-	res.first = resL.first > resR.first ? resL.first + 1 : resR.first + 1;//first·ÅÉî¶È,second·Å¾àÀë
+	res.first = resL.first > resR.first ? resL.first + 1 : resR.first + 1;//firstæ”¾æ·±åº¦,secondæ”¾è·ç¦»
 	res.second = (resL.first + resR.first + 1) > max(resL.second, resR.second) ? (resL.first + resR.first + 1) : max(resL.second, resR.second);
 	return res;
 }
 
-//ÓÉÇ°Ğò±éÀúºÍÖĞĞò±éÀúÖØ½¨¶ş²æÊ÷
+//ç”±å‰åºéå†å’Œä¸­åºéå†é‡å»ºäºŒå‰æ ‘
 BinaryTreeNode *rebulidTree(int *preOrder, int*  pInOrder, int nodenum)
 {
 	if (preOrder == NULL || pInOrder == NULL || nodenum <= 0)
@@ -355,7 +355,7 @@ BinaryTreeNode *rebulidTree(int *preOrder, int*  pInOrder, int nodenum)
 	return root;
 }
 
-//ÅĞ¶Ï¶ş²æÊ÷ÊÇ·ñÊÇÍêÈ«¶ş²æÊ÷
+//åˆ¤æ–­äºŒå‰æ ‘æ˜¯å¦æ˜¯å®Œå…¨äºŒå‰æ ‘
 bool isComplete(BiTree T)
 {
 	if (T == NULL)
@@ -405,7 +405,7 @@ bool isComplete(BiTree T)
 	return result;
 }
 
-//ÅĞ¶ÏÊÇ·ñÎªÂú¶ş²æÊ÷
+//åˆ¤æ–­æ˜¯å¦ä¸ºæ»¡äºŒå‰æ ‘
 bool isPerfect(BiTree T)
 {
 	if (T == NULL)

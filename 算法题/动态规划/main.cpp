@@ -1,4 +1,4 @@
-#include<string>
+ï»¿#include<string>
 #include<iostream>
 #include<vector>
 #include<algorithm>
@@ -23,13 +23,13 @@ void printMaxarray(int i, int j, vector<vector<int>> flag, string s1)
 	}
 }
 
-//ÕÒµ½×î´ó¹«¹²×ÓĞòÁĞ_¶¨Î»×ÓĞòÁĞ²¢·µ»Ø³¤¶È
+//æ‰¾åˆ°æœ€å¤§å…¬å…±å­åºåˆ—_å®šä½å­åºåˆ—å¹¶è¿”å›é•¿åº¦
 int maxarraylen(string s1, string s2)
 {
 	int s1_len = s1.length(), s2_len = s2.length();
 	if (s1_len == 0 || s2_len == 0)
 		return 0;
-	//¶¯Ì¬¹æ»®¹ı³Ì
+	//åŠ¨æ€è§„åˆ’è¿‡ç¨‹
 	vector<vector<int>> array(s1_len+1, vector<int>(s2_len+1));
 	vector<vector<int>> flag(s1_len + 1, vector<int>(s2_len + 1));
 	for (int i = 0;i < s1_len+1;i++)
@@ -64,17 +64,17 @@ int maxarraylen(string s1, string s2)
 			}		
 		}
 	}
-	printMaxarray(s1_len, s2_len, flag, s1);//´òÓ¡×î´ó¹«¹²×ÓĞòÁĞ
+	printMaxarray(s1_len, s2_len, flag, s1);//æ‰“å°æœ€å¤§å…¬å…±å­åºåˆ—
 	return array[s1_len][ s2_len];
 }
 
-//ÕÒµ½×î´ó¹«¹²×Ó´®_¶¨Î»×Ó´®²¢·µ»Ø³¤¶È
+//æ‰¾åˆ°æœ€å¤§å…¬å…±å­ä¸²_å®šä½å­ä¸²å¹¶è¿”å›é•¿åº¦
 int maxSubstr(string s1, string s2)
 {
 	int s1_len = s1.length(), s2_len = s2.length();
 	if (s1_len == 0 || s2_len == 0)
 		return 0;
-	//¶¯Ì¬¹æ»®¹ı³Ì
+	//åŠ¨æ€è§„åˆ’è¿‡ç¨‹
 	int res = 0,substrend = 0;
 	string resstr;
 	vector<vector<int>> array(s1_len + 1, vector<int>(s2_len + 1));
@@ -96,14 +96,14 @@ int maxSubstr(string s1, string s2)
 				if (array[i][j]>res)
 				{
 					res = array[i][j];
-					substrend = i;//¼ÇÂ¼½áÊøÎ»ÖÃ
+					substrend = i;//è®°å½•ç»“æŸä½ç½®
 				}	
 			}
 			else
 				array[i][j] = 0;
 		}
 	}
-	resstr = s1.substr(substrend- res, res);//ÌáÈ¡×Ó´®
+	resstr = s1.substr(substrend- res, res);//æå–å­ä¸²
 	return res;
 }
 
