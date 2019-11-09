@@ -6,6 +6,7 @@ using namespace std;
 void print(int a[], int len);//打印
 void maopao(int a[], int len);//冒泡排序						  
 void kuaipai(int a[], int begin, int end);//快速排序
+void originKuaipai(int a[], int begin,int end);//原始快排
 void charu(int a[], int len);//插入排序
 void xuanze(int a[], int len);//选择排序
 void guibin(int arr[], int len);//归并排序
@@ -40,33 +41,86 @@ void maopao(int a[],int len)
 	}
 }
 
+//原始快排
+void originKuaipai(int a[], int begin, int end)
+{
+	if (begin >= end)
+		return;
+	int p = end;
+	int temp;
+	int less = begin - 1;//小于等于区的右边界
+	for (int i = begin; i <= end; i++)
+	{
+		if (a[i] <= a[p])
+		{
+			temp = a[i];
+			a[i] = a[++less];
+			a[less] = temp;
+		}
+	}
+	originKuaipai(a, begin, less - 1);
+	originKuaipai(a, less + 1, end);
+}
+
+//快速排序(错误版本TODO)
+//void kuaipai(int a[], int begin, int end)
+//{
+//	if (begin >= end)
+//		return;
+//	int left = begin, right = end-1;
+//	int p = end;
+//	int temp;
+//	while (left < right)
+//	{
+//		while (left<right&&a[left]<=a[p])
+//			left++;
+//		while (left < right&&a[right] > a[p])
+//			right--;
+//		if (left < right)
+//		{
+//			temp = a[left];
+//			a[left] = a[right];
+//			a[right] = temp;
+//		}
+//	}
+//	temp = a[left];
+//	a[left] = a[p];
+//	a[p] = temp;
+//	kuaipai(a,begin,left - 1);
+//	kuaipai(a,left+1,end);
+//}
+
 //快速排序
 void kuaipai(int a[], int begin, int end)
 {
 	if (begin >= end)
 		return;
-	int left = begin, right = end-1;
-	int p = end;
+	int p=begin,less = begin-1, more = end;
 	int temp;
-	while (left < right)
+	while (p < more)
 	{
-		while (left<right&&a[left]<a[p])
-			left++;
-		while (left < right&&a[right] > a[p])
-			right--;
-		if (left < right)
+		if (a[p] < a[end])
 		{
-			temp = a[left];
-			a[left] = a[right];
-			a[right] = temp;
+			temp = a[p];
+			a[p++] = a[++less];
+			a[less] = temp;
+		}
+		else if (a[p] == a[end])
+			p++;
+		else
+		{
+			temp = a[p];
+			a[p] = a[--more];
+			a[more] = temp;
 		}
 	}
-	temp = a[left];
-	a[left] = a[p];
-	a[p] = temp;
-	kuaipai(a,begin,left - 1);
-	kuaipai(a,left+1,end);
+	temp = a[more];
+	a[more] = a[end];
+	a[end] = temp;
+	kuaipai(a,begin,less);
+	kuaipai(a,more,end);
 }
+
 
 //插入排序
 void charu(int a[], int len)
@@ -171,10 +225,12 @@ void main()
 {
 	generateRondomArray(5,1,10);
 	int a[] = { 50, 10, 90, 30, 70, 40, 80, 60, 20 };
+	//int a[] = { 30,70,30,40,20,30 };
 	int len = sizeof(a) / sizeof(int);
-	guibin(a, len);
+	//guibin(a, len);
 	//maopao(a,len);
-	//kuaipai(a, 0, len - 1);//传入的是首尾索引
+	kuaipai(a, 0, len - 1);//传入的是首尾索引
+	//originKuaipai(a,0,len-1);
 	//charu(a, len);
 	//xuanze(a, len);
 	print(a, len);

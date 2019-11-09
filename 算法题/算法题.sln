@@ -19,6 +19,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "动态数组", "动态数�
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "递归实现栈反转", "递归实现栈反转\递归实现栈反转.vcxproj", "{CFE4F5BD-40C6-4603-A85D-C0BAD6A232EE}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "小和数", "小和数\小和数.vcxproj", "{9C1D462E-7997-483C-8852-8D1697586933}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -91,6 +93,14 @@ Global
 		{CFE4F5BD-40C6-4603-A85D-C0BAD6A232EE}.Release|x64.Build.0 = Release|x64
 		{CFE4F5BD-40C6-4603-A85D-C0BAD6A232EE}.Release|x86.ActiveCfg = Release|Win32
 		{CFE4F5BD-40C6-4603-A85D-C0BAD6A232EE}.Release|x86.Build.0 = Release|Win32
+		{9C1D462E-7997-483C-8852-8D1697586933}.Debug|x64.ActiveCfg = Debug|x64
+		{9C1D462E-7997-483C-8852-8D1697586933}.Debug|x64.Build.0 = Debug|x64
+		{9C1D462E-7997-483C-8852-8D1697586933}.Debug|x86.ActiveCfg = Debug|Win32
+		{9C1D462E-7997-483C-8852-8D1697586933}.Debug|x86.Build.0 = Debug|Win32
+		{9C1D462E-7997-483C-8852-8D1697586933}.Release|x64.ActiveCfg = Release|x64
+		{9C1D462E-7997-483C-8852-8D1697586933}.Release|x64.Build.0 = Release|x64
+		{9C1D462E-7997-483C-8852-8D1697586933}.Release|x86.ActiveCfg = Release|Win32
+		{9C1D462E-7997-483C-8852-8D1697586933}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
