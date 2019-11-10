@@ -9,9 +9,12 @@ void kuaipai(int a[], int begin, int end);//快速排序
 void originKuaipai(int a[], int begin,int end);//原始快排
 void charu(int a[], int len);//插入排序
 void xuanze(int a[], int len);//选择排序
-void guibin(int arr[], int len);//归并排序
+void guibin(int arr[], int len);//归并排序							
 void guibinProcess(int arr[], int L, int R);//归并具体过程
 void merge(int arr[], int L, int mid, int R);//归并后的连接
+void heapSort(int arr[],int len);//堆排序
+void heapInsert(int arr[],int index);//构建大根堆过程
+void heapify(int arr[],int index, int heapSize);//堆向下查找，将大的值换到根节点
 int* generateRondomArray(int size, int rangeL, int rangeR);//生成随机数列
 
 
@@ -90,7 +93,7 @@ void originKuaipai(int a[], int begin, int end)
 //	kuaipai(a,left+1,end);
 //}
 
-//快速排序
+//快速排序(可以修改成随机快速排序，这样快排的复杂度成为概率事件)随机快排只需要随机选择一位数并将其同最后一位交换位置
 void kuaipai(int a[], int begin, int end)
 {
 	if (begin >= end)
@@ -206,6 +209,67 @@ void merge(int arr[], int L, int mid, int R)
 	}
 }
 
+//堆排序
+void heapSort(int arr[],int len)
+{
+	if (arr == NULL || len < 2)
+		return;
+	for (int i = 0; i < len; i++)
+		heapInsert(arr, i);
+	int heapSize = len;
+	//根节点(即最大节点)换到最后，同时使堆大小减1
+	int temp;
+	temp = arr[0];
+	arr[0] = arr[--heapSize];
+	arr[heapSize] = temp;
+	while (heapSize > 0)
+	{
+		heapify(arr, 0, heapSize);
+		temp = arr[0];
+		arr[0] = arr[--heapSize];
+		arr[heapSize] = temp;
+	}
+
+}
+
+//构建大根堆过程
+void heapInsert(int arr[],int index)
+{
+	int temp;
+	while (arr[index] > arr[(index - 1) / 2])
+	{
+		//当前位置和父节点位置交换
+		temp = arr[index];
+		arr[index] = arr[(index - 1) / 2];
+		arr[(index - 1) / 2] = temp;
+		//调整完当前位置改变，继续和父节点比较
+		index = (index - 1) / 2;
+	}
+}
+
+//堆向下查找，将大的值换到根节点
+void heapify(int arr[],int index, int heapSize)
+{
+	int left = index * 2 + 1;
+	int temp;
+	while (left < heapSize)
+	{
+		//找到父节点和子节点中最大的点
+		int largest = left + 1 < heapSize&&arr[left + 1] > arr[left] ? left + 1 : left;
+		largest = arr[largest] > arr[index] ? largest : index;
+		//如果父节点最大，结束循环
+		if (largest == index)
+			break;
+		//如果最大的不是父节点，将子节点位置和父节点位置交换
+		temp = arr[largest];
+		arr[largest] = arr[index];
+		arr[index] = temp;
+		//继续往下遍历
+		index = largest;
+		left = index * 2 + 1;
+	}
+}
+
 //生成随机数列
 int* generateRondomArray(int size, int rangeL, int rangeR)
 {
@@ -229,10 +293,11 @@ void main()
 	int len = sizeof(a) / sizeof(int);
 	//guibin(a, len);
 	//maopao(a,len);
-	kuaipai(a, 0, len - 1);//传入的是首尾索引
+	//kuaipai(a, 0, len - 1);//传入的是首尾索引
 	//originKuaipai(a,0,len-1);
 	//charu(a, len);
 	//xuanze(a, len);
+	heapSort(a, len);
 	print(a, len);
 	system("pause");
 }
