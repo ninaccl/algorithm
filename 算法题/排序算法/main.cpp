@@ -278,7 +278,7 @@ int* generateRondomArray(int size, int rangeL, int rangeR)
 		cout << "false range" << endl;
 		return nullptr;
 	}
-	int *arr = new int[(int)(size+1)*rand()/double(RAND_MAX)];
+	int *arr = new int[(int)(size )];
 	srand(time(NULL));//利用系统时间，设置随机种子
 	for (int i = 0; i < size; i++)
 		arr[i] = rand() % (rangeR - rangeL + 1) + rangeL;
