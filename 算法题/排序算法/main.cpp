@@ -3,6 +3,7 @@
 
 using namespace std;
 
+//基于比较的排序
 void print(int a[], int len);//打印
 void maopao(int a[], int len);//冒泡排序						  
 void kuaipai(int a[], int begin, int end);//快速排序
@@ -16,7 +17,8 @@ void heapSort(int arr[],int len);//堆排序
 void heapInsert(int arr[],int index);//构建大根堆过程
 void heapify(int arr[],int index, int heapSize);//堆向下查找，将大的值换到根节点
 int* generateRondomArray(int size, int rangeL, int rangeR);//生成随机数列
-
+//-------------------------------------------------------------------------------
+//桶排序(不基于比较，基于数据状况)：分为计数排序和基数排序
 
 
 void print(int a[],int len)
