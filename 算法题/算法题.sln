@@ -41,6 +41,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "链表_左神", "链表_左
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "链表_左神_拷贝含有随机指针的节点", "链表_左神_拷贝含有随机指针的节点\链表_左神_拷贝含有随机指针的节点.vcxproj", "{E92B4E8C-8D12-4DFE-8C61-2F0580119AF5}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "链表_左神_单链表相交问题", "链表_左神_单链表相交问题\链表_左神_单链表相交问题.vcxproj", "{D3CA20C4-0014-416B-9F6F-074102987297}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -201,6 +203,14 @@ Global
 		{E92B4E8C-8D12-4DFE-8C61-2F0580119AF5}.Release|x64.Build.0 = Release|x64
 		{E92B4E8C-8D12-4DFE-8C61-2F0580119AF5}.Release|x86.ActiveCfg = Release|Win32
 		{E92B4E8C-8D12-4DFE-8C61-2F0580119AF5}.Release|x86.Build.0 = Release|Win32
+		{D3CA20C4-0014-416B-9F6F-074102987297}.Debug|x64.ActiveCfg = Debug|x64
+		{D3CA20C4-0014-416B-9F6F-074102987297}.Debug|x64.Build.0 = Debug|x64
+		{D3CA20C4-0014-416B-9F6F-074102987297}.Debug|x86.ActiveCfg = Debug|Win32
+		{D3CA20C4-0014-416B-9F6F-074102987297}.Debug|x86.Build.0 = Debug|Win32
+		{D3CA20C4-0014-416B-9F6F-074102987297}.Release|x64.ActiveCfg = Release|x64
+		{D3CA20C4-0014-416B-9F6F-074102987297}.Release|x64.Build.0 = Release|x64
+		{D3CA20C4-0014-416B-9F6F-074102987297}.Release|x86.ActiveCfg = Release|Win32
+		{D3CA20C4-0014-416B-9F6F-074102987297}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
