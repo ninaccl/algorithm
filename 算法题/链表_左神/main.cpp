@@ -2,12 +2,16 @@
 
 void main() {
 	LNode* node1 = CreateList(5);
-	LNode* node2 = CreateList(4);
+//	LNode* node2 = CreateList(4);
 
 	////打印链表
 	printLinkedList(node1);
-	printLinkedList(node2);
+//	printLinkedList(node2);
 
-	printCommonPart(node1, node2);////打印公共部分
+//	printCommonPart(node1, node2);//打印公共部分
+
+	LNode* res = listPartition2(node1, 3);
+	printLinkedList(res);
+
 	system("pause");
 }
