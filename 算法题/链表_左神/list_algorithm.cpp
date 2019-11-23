@@ -301,3 +301,4 @@ LNode* listPartition2(LNode* head, int pivot)
 
 	return sH != NULL ? sH : eH != NULL ? eH : bH;
 }
+

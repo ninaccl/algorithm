@@ -30,5 +30,5 @@ LNode* listPartition1(LNode* head, int pivot);//利用快排的单步思想进�
 void arrPartition(LNode** nodeArr,int length, int pivot);//可参照排序算法中的快排partition过程
 void swap(LNode* nodeArr[], int a, int b);//交换
 
-////方法二：遍历寻找小于，等于和大于的部分 额外空间复杂度O(1)
+////方法二：遍历寻找小于，等于和大于的部分 额外空间复杂度O(1) 稳定排序
 LNode* listPartition2(LNode* head, int pivot);//遍历寻找
