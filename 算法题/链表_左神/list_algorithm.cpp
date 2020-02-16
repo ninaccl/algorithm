@@ -103,9 +103,9 @@ bool isPalindrome2(LNode* head) {
 	}
 	while (!stackList.empty()) {
 		if (head->data != stackList.top()->data) {
-			stackList.pop();
 			return false;
 		}
+		stackList.pop();
 		head = head->next;
 	}
 	return true;
