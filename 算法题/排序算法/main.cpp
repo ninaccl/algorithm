@@ -67,64 +67,47 @@ void originKuaipai(int a[], int begin, int end)
 	originKuaipai(a, less + 1, end);
 }
 
-//快速排序(错误版本TODO)
-//void kuaipai(int a[], int begin, int end)
-//{
-//	if (begin >= end)
-//		return;
-//	int left = begin, right = end-1;
-//	int p = end;
-//	int temp;
-//	while (left < right)
-//	{
-//		while (left<right&&a[left]<=a[p])
-//			left++;
-//		while (left < right&&a[right] > a[p])
-//			right--;
-//		if (left < right)
-//		{
-//			temp = a[left];
-//			a[left] = a[right];
-//			a[right] = temp;
-//		}
-//	}
-//	temp = a[left];
-//	a[left] = a[p];
-//	a[p] = temp;
-//	kuaipai(a,begin,left - 1);
-//	kuaipai(a,left+1,end);
-//}
-
-//快速排序(可以修改成随机快速排序，这样快排的复杂度成为概率事件)随机快排只需要随机选择一位数并将其同最后一位交换位置
+//快速排序
+//上面方法，需要进行多次交换，影响效率
+//可以从前后同时遍历，根据大小比较结果，按需交换
+//先从前往后，遇到比基准大的暂停
+//再从后往前，遇到比基准小的暂停
+//然后交换两位置数据
+//重复直到相遇
 void kuaipai(int a[], int begin, int end)
 {
 	if (begin >= end)
 		return;
-	int p=begin,less = begin-1, more = end;
+	int left = begin, right = end-1;
+	int p = end;
 	int temp;
-	while (p < more)
+	while (left < right)
 	{
-		if (a[p] < a[end])
+		while (left<right&&a[left]<=a[p])
+			left++;
+		while (left < right&&a[right] > a[p])
+			right--;
+		if (left < right)
 		{
-			temp = a[p];
-			a[p++] = a[++less];
-			a[less] = temp;
-		}
-		else if (a[p] == a[end])
-			p++;
-		else
-		{
-			temp = a[p];
-			a[p] = a[--more];
-			a[more] = temp;
+			temp = a[left];
+			a[left] = a[right];
+			a[right] = temp;
 		}
 	}
-	temp = a[more];
-	a[more] = a[end];
-	a[end] = temp;
-	kuaipai(a,begin,less);
-	kuaipai(a,more,end);
+	//上一步循环跳出条件，left==right
+	//判断相遇点和标准p大小
+	//如果大于，直接交换
+	//如果小于，要和后面的位置交换
+	if (a[left] <= a[p])
+		left++;
+	temp = a[left];
+	a[left] = a[p];
+	a[p] = temp;
+	kuaipai(a,begin,left - 1);
+	kuaipai(a,left+1,end);
 }
+
+
 
 
 //插入排序
@@ -290,7 +273,7 @@ int* generateRondomArray(int size, int rangeL, int rangeR)
 void main()
 {
 	generateRondomArray(5,1,10);
-	int a[] = { 50, 10, 90, 30, 70, 40, 80, 60, 20 };
+	int a[] = { 50, 10, 90, 30, 70, 40, 80, 60, 100 };
 	//int a[] = { 30,70,30,40,20,30 };
 	int len = sizeof(a) / sizeof(int);
 	//guibin(a, len);
